@@ -1,0 +1,538 @@
+GET http://localhost:3000/records/5bd102112693270e6ab543b1/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"book_id":"5bd0fef4ccc8b80e56143b5b","user_id":"5bd0ff18ccc8b80e56143b5c"}
+
+<> 2018-10-25T124629.200.json
+
+###
+
+PUT http://localhost:3000/records/5bd102112693270e6ab543b1/return
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"book_id":"5bd0fef4ccc8b80e56143b5b","user_id":"5bd0ff18ccc8b80e56143b5c"}
+
+<> 2018-10-25T124553.200.json
+
+###
+
+GET http://localhost:3000/records/5bd102112693270e6ab543b1/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"book_id":"5bd0fef4ccc8b80e56143b5b","user_id":"5bd0ff18ccc8b80e56143b5c"}
+
+<> 2018-10-25T124534.200.json
+
+###
+
+PUT http://localhost:3000/records/5bd102112693270e6ab543b1/return
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"book_id":"5bd0fef4ccc8b80e56143b5b","user_id":"5bd0ff18ccc8b80e56143b5c"}
+
+<> 2018-10-25T124526.200.json
+
+###
+
+GET http://localhost:3000/records/5bd102112693270e6ab543b1/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"book_id":"5bd0fef4ccc8b80e56143b5b","user_id":"5bd0ff18ccc8b80e56143b5c"}
+
+<> 2018-10-25T124516.200.json
+
+###
+
+PUT http://localhost:3000/records/5bd102112693270e6ab543b1/return
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"book_id":"5bd0fef4ccc8b80e56143b5b","user_id":"5bd0ff18ccc8b80e56143b5c"}
+
+<> 2018-10-25T124357.200.json
+
+###
+
+GET http://localhost:3000/records/5bd102112693270e6ab543b1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"book_id":"5bd0fef4ccc8b80e56143b5b","user_id":"5bd0ff18ccc8b80e56143b5c"}
+
+<> 2018-10-25T124350.200.json
+
+###
+
+GET http://localhost:3000/records/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"book_id":"5bd0fef4ccc8b80e56143b5b","user_id":"5bd0ff18ccc8b80e56143b5c"}
+
+<> 2018-10-25T124335.200.json
+
+###
+
+GET http://localhost:3000/records/5bd0ffb1ccc8b80e56143b5d
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"book_id":"5bd0fef4ccc8b80e56143b5b","user_id":"5bd0ff18ccc8b80e56143b5c"}
+
+<> 2018-10-25T124326.200.json
+
+###
+
+GET http://localhost:3000/records/5bd0ffb1ccc8b80e56143b5d/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"book_id":"5bd0fef4ccc8b80e56143b5b","user_id":"5bd0ff18ccc8b80e56143b5c"}
+
+<> 2018-10-25T124322.200.json
+
+###
+
+PUT http://localhost:3000/records/5bd0ffb1ccc8b80e56143b5d/return
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"book_id":"5bd0fef4ccc8b80e56143b5b","user_id":"5bd0ff18ccc8b80e56143b5c"}
+
+###
+
+PUT http://localhost:3000/records/5bd0ffb1ccc8b80e56143b5d/return
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"book_id":"5bd0fef4ccc8b80e56143b5b","user_id":"5bd0ff18ccc8b80e56143b5c"}
+
+###
+
+GET http://localhost:3000/records/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"book_id":"5bd0fef4ccc8b80e56143b5b","user_id":"5bd0ff18ccc8b80e56143b5c"}
+
+<> 2018-10-25T123919.200.json
+
+###
+
+GET http://localhost:3000/records/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"book_id":"5bd0fef4ccc8b80e56143b5b","user_id":"5bd0ff18ccc8b80e56143b5c"}
+
+###
+
+GET http://localhost:3000/records/5bd0ffb1ccc8b80e56143b5d
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"book_id":"5bd0fef4ccc8b80e56143b5b","user_id":"5bd0ff18ccc8b80e56143b5c"}
+
+###
+
+PUT http://localhost:3000/records/5bd0ffb1ccc8b80e56143b5d/return
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"book_id":"5bd0fef4ccc8b80e56143b5b","user_id":"5bd0ff18ccc8b80e56143b5c"}
+
+###
+
+PUT http://localhost:3000/records/5bd0ffb1ccc8b80e56143b5d/return
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"book_id":"5bd0fef4ccc8b80e56143b5b","user_id":"5bd0ff18ccc8b80e56143b5c"}
+
+###
+
+GET http://localhost:3000/records
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"book_id":"5bd0fef4ccc8b80e56143b5b","user_id":"5bd0ff18ccc8b80e56143b5c"}
+
+<> 2018-10-25T123721.200.json
+
+###
+
+POST http://localhost:3000/records/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"book_id":"5bd0fef4ccc8b80e56143b5b","user_id":"5bd0ff18ccc8b80e56143b5c"}
+
+<> 2018-10-25T123649.200.json
+
+###
+
+GET http://localhost:3000/records/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"book_id":"5bd0fef4ccc8b80e56143b5b","user_id":"5bd0ff18ccc8b80e56143b5c"}
+
+<> 2018-10-25T123642.200.json
+
+###
+
+GET http://localhost:3000/records/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"book_id":"5bd0fef4ccc8b80e56143b5b","user_id":"5bd0ff18ccc8b80e56143b5c"}
+
+<> 2018-10-25T123018.200.json
+
+###
+
+GET http://localhost:3000/records/5bd0ffb1ccc8b80e56143b5d
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"book_id":"5bd0fef4ccc8b80e56143b5b","user_id":"5bd0ff18ccc8b80e56143b5c"}
+
+<> 2018-10-25T123015.200.json
+
+###
+
+DELETE http://localhost:3000/records/5bd0ffb1ccc8b80e56143b5d
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"book_id":"5bd0fef4ccc8b80e56143b5b","user_id":"5bd0ff18ccc8b80e56143b5c"}
+
+<> 2018-10-25T123010.200.json
+
+###
+
+GET http://localhost:3000/records/count/totalRecords
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"book_id":"5bd0fef4ccc8b80e56143b5b","user_id":"5bd0ff18ccc8b80e56143b5c"}
+
+<> 2018-10-25T122951.200.json
+
+###
+
+GET http://localhost:3000/records/5bd0ffb1ccc8b80e56143b5d
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"book_id":"5bd0fef4ccc8b80e56143b5b","user_id":"5bd0ff18ccc8b80e56143b5c"}
+
+<> 2018-10-25T122920.200.json
+
+###
+
+PUT http://localhost:3000/records/5bd0ffb1ccc8b80e56143b5d/return
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"book_id":"5bd0fef4ccc8b80e56143b5b","user_id":"5bd0ff18ccc8b80e56143b5c"}
+
+<> 2018-10-25T122912.200.json
+
+###
+
+GET http://localhost:3000/records/5bd0ffb1ccc8b80e56143b5d/return
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"book_id":"5bd0fef4ccc8b80e56143b5b","user_id":"5bd0ff18ccc8b80e56143b5c"}
+
+<> 2018-10-25T122850.404.html
+
+###
+
+GET http://localhost:3000/records/5bd0ffb1ccc8b80e56143b5d
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"book_id":"5bd0fef4ccc8b80e56143b5b","user_id":"5bd0ff18ccc8b80e56143b5c"}
+
+<> 2018-10-25T122825.200.json
+
+###
+
+GET http://localhost:3000/records
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"book_id":"5bd0fef4ccc8b80e56143b5b","user_id":"5bd0ff18ccc8b80e56143b5c"}
+
+<> 2018-10-25T122720.200.json
+
+###
+
+POST http://localhost:3000/records
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"book_id":"5bd0fef4ccc8b80e56143b5b","user_id":"5bd0ff18ccc8b80e56143b5c"}
+
+<> 2018-10-25T122641.200.json
+
+###
+
+GET http://localhost:3000/students
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"stu_name":"xaio ming", "age":16,"major":"Foreign Languages", "stu_number":"201583020111111"}
+
+<> 2018-10-25T122412.200.json
+
+###
+
+POST http://localhost:3000/students
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"stu_name":"xaio ming", "age":16,"major":"Foreign Languages", "stu_number":"201583020111111"}
+
+<> 2018-10-25T122408.200.json
+
+###
+
+GET http://localhost:3000/books
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"book_name":"English book", "author":"Mr.Wang", "publishing":"Foreign Language Press"}
+
+<> 2018-10-25T122339.200.json
+
+###
+
+POST http://localhost:3000/books
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"book_name":"English book", "author":"Mr.Wang", "publishing":"Foreign Language Press"}
+
+<> 2018-10-25T122332.200.json
+
+###
+
+GET http://localhost:3000/records
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"stu_name":"xaio ming", "age":16,"major":"Foreign Languages", "stu_number":"20158302011"}
+
+<> 2018-10-25T121934.200.json
+
+###
+
+GET http://localhost:3000/students/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"stu_name":"xaio ming", "age":16,"major":"Foreign Languages", "stu_number":"20158302011"}
+
+<> 2018-10-24T074313.200.json
+
+###
+
+GET http://localhost:3000/students/5bd0bc0da1c6580ca7791dcd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"stu_name":"xaio ming", "age":16,"major":"Foreign Languages", "stu_number":"20158302011"}
+
+<> 2018-10-24T074306.200.json
+
+###
+
+DELETE http://localhost:3000/students/5bd0bc0da1c6580ca7791dcd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"stu_name":"xaio ming", "age":16,"major":"Foreign Languages", "stu_number":"20158302011"}
+
+<> 2018-10-24T074259.200.json
+
+###
+
+GET http://localhost:3000/students/5bd0bc0da1c6580ca7791dcd
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"stu_name":"xaio ming", "age":16,"major":"Foreign Languages", "stu_number":"20158302011"}
+
+<> 2018-10-24T074214.200.json
+
+###
+
+GET http://localhost:3000/students
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"stu_name":"xaio ming", "age":16,"major":"Foreign Languages", "stu_number":"20158302011"}
+
+<> 2018-10-24T074202.200.json
+
+###
+
+POST http://localhost:3000/students
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"stu_name":"xaio ming", "age":16,"major":"Foreign Languages", "stu_number":"20158302011"}
+
+<> 2018-10-24T073805.200.json
+
+###
+
+POST http://localhost:3000/students
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"stu_name":"xaio ming", "age":16,"major":"Foreign Languages", "stu_number"="20158302011"}
+
+<> 2018-10-24T072636.400.html
+
+###
+
+POST http://localhost:3000/students
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"stu_name":"xaio ming", "age":16,"major":"Foreign Languages", "stu_number"="20158302011"}
+
+<> 2018-10-24T072535.400.html
+
+###
+
+GET http://localhost:3000/students
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"book_name":"English book", "author":"Mr.Wang","publishing":"Foreign Languages Press"}
+
+<> 2018-10-24T072151.200.json
+
+###
+
+DELETE http://localhost:3000/books/5bd09ade5bf
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"book_name":"English book", "author":"Mr.Wang","publishing":"Foreign Languages Press"}
+
+<> 2018-10-24T072119.200.json
+
+###
+
+DELETE http://localhost:3000/books/5bd09ade5bf
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"book_name":"English book", "author":"Mr.Wang","publishing":"Foreign Languages Press"}
+
+<> 2018-10-24T052743.200.json
+
+###
+
+DELETE http://localhost:3000/books/5bd09ade5bf1240bbf04a944
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"book_name":"English book", "author":"Mr.Wang","publishing":"Foreign Languages Press"}
+
+<> 2018-10-24T052634.200.json
+
+###
+
+DELETE http://localhost:3000/books/5bd0
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"book_name":"English book", "author":"Mr.Wang","publishing":"Foreign Languages Press"}
+
+<> 2018-10-24T052603.200.json
+
+###
+
+DELETE http://localhost:3000/books/5bd09ade5bf1240bbf04a944
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"book_name":"English book", "author":"Mr.Wang","publishing":"Foreign Languages Press"}
+
+<> 2018-10-24T052527.200.json
+
+###
+
+GET http://localhost:3000/books/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"book_name":"English book", "author":"Mr.Wang","publishing":"Foreign Languages Press"}
+
+<> 2018-10-24T052520.200.json
+
+###
+
