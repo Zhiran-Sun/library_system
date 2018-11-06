@@ -27,112 +27,140 @@ describe('Library',  () => {
         book2.save();
         book3.save();
     });
-    describe.only('GET /books',  () => {
+
+    describe('GET /books',  () => {
         it('should return all the books of library', function(done) {
             chai.request(server)
                 .get('/books')
                 .end((err, res) => {
                     expect(res.body).to.be.a('array');
-                    expect(res.body.length).to.equal(3);
+                    // expect(res.body.length).to.equal(3);
                     expect(res.body[0].book_name).to.equal("Time Book");
                     expect(res.body[0].author).to.equal("One Interesting Person");
                     expect(res.body[0].publishing).to.equal("Time Press");
+                    expect(res.body[1].book_name).to.equal("Space Book");
+                    expect(res.body[1].author).to.equal("One Sleeping Person");
+                    expect(res.body[1].publishing).to.equal("Space Press");
+                    expect(res.body[2].book_name).to.equal("World Book");
+                    expect(res.body[2].author).to.equal("One Walking Person");
+                    expect(res.body[2].publishing).to.equal("World Press");
                     done();
                 });
         });
+        after(function(done){
+            Book.collection.deleteMany();
+            done();
+        });
     });
 
-    describe.only('GET /books',  () => {
-        it('should return the books with correct id', function(done) {
+    describe('GET /books/:name/byName',  () => {
+        it('should return the books with right name', function(done) {
             chai.request(server)
-                .get('/books')
+                .get('/books/Time Boo/byName')
                 .end((err, res) => {
                     expect(res.body).to.be.a('array');
-                    expect(res.body.length).to.equal(3);
                     expect(res.body[0].book_name).to.equal("Time Book");
                     expect(res.body[0].author).to.equal("One Interesting Person");
                     expect(res.body[0].publishing).to.equal("Time Press");
                     done();
                 });
         });
+        after(function(done){
+            Book.collection.deleteMany();
+            done();
+        });
     });
 
-    describe('POST /donations', function () {
-        it('should return confirmation message and update datastore', function(done) {
-            let donation = {
-                paymenttype: 'Visa' ,
-                amount: 1200,
-                upvotes: 0
-            };
+    describe('GET /books/:press/byPress',  () => {
+        it('should return the books with right press', function(done) {
             chai.request(server)
-                .post('/donations')
-                .send(donation)
+                .get('/books/Time Press/byPress')
+                .end((err, res) => {
+                    expect(res.body).to.be.a('array');
+                    expect(res.body[0].book_name).to.equal("Time Book");
+                    expect(res.body[0].author).to.equal("One Interesting Person");
+                    expect(res.body[0].publishing).to.equal("Time Press");
+                    done();
+                });
+        });
+        after(function(done){
+            Book.collection.deleteMany();
+            done();
+        });
+    });
+
+    describe('GET /books/:id',  function()  {
+        it('should return the books with correct id', function(done) {
+            Book.find({"book_name":"Time Book"},'_id', function (err, book) {
+                if(book){
+                    var id = book[0]._id;
+                    chai.request(server)
+                        .get('/books/'+id)
+                        .end(function(err, res) {
+                            expect(res.body[0].book_name).to.equal("Time Book");
+                            expect(res.body[0].author).to.equal("One Interesting Person");
+                            expect(res.body[0].publishing).to.equal("Time Press");
+                            done();
+                        });
+                }
+            });
+        });
+        after(function(done){
+            Book.collection.deleteMany();
+            done();
+        });
+    });
+
+    describe('POST /books', function () {
+        it('should return successful message and the new book', function(done) {
+            let newbook = {"book_name":"Happy book", "author":"HelloHello", "publishing":"Good Language Press"};
+            chai.request(server)
+                .post('/books')
+                .send(newbook)
                 .end(function(err, res) {
-                    expect(res).to.have.status(200);
-                    expect(res.body).to.have.property('message').equal('Donation Added!' );
+                    expect(res.body).to.have.property('message').equal('Book Successfully Added!' );
                     done();
                 });
         });
         after(function  (done) {
             chai.request(server)
-                .get('/donations')
+                .get('/books')
                 .end(function(err, res) {
-                    let result = _.map(res.body, (donation) => {
-                        return { paymenttype: donation.paymenttype,
-                            amount: donation.amount };
-                    }  );
-                    expect(result).to.include( { paymenttype: 'Visa', amount: 1200  } );
-                    done();
-                });
-        });  // end-after
-    }); // end-describe
-
-    describe('PUT /donations/:id/votes', function () {
-        it('should return a message and the donation upvoted by 1', function(done) {
-            chai.request(server)
-                .put('/donations/1000001/vote')
-                .end(function(err, res) {
-                    expect(res).to.have.status(200);
-                    let donation = res.body.data ;
-                    expect(donation).to.include( { id: 1000001, upvotes: 3  } );
-                    done();
-                });
-        });
-        it('should return a 404 and a message for invalid donation id', function(done) {
-            chai.request(server)
-                .put('/donations/1100001/vote')
-                .end(function(err, res) {
-                    expect(res).to.have.status(404);
-                    expect(res.body).to.have.property('message','Invalid Donation Id!' ) ;
+                    let len = res.body.length-1;
+                    expect(res.body[3].book_name).to.equal("Happy book");
+                    expect(res.body[3].author).to.equal("HelloHello");
+                    expect(res.body[3].publishing).to.equal("Good Language Press");
+                    Book.collection.deleteMany();
                     done();
                 });
         });
     });
 
-    describe('DELETE /donations/:id/votes', function () {
-        it('should return a message that deleting successfully and the deleted donation', function(done){
-           chai.request(server)
-               .delete('/donations/1000001')
-               .end(function(err, res) {
-                   let donation = res.body.data ;
-                   expect(res.body).to.have.property('message','Donation Successfully Deleted!' );
-                   expect(donation).to.include( { id: 1000001} );
-                   done();
-               });
+    describe('DELETE /books/:id', function () {
+        it('should return a message that deleting successfully and the deleted book', function(done){
+            Book.find({"book_name":"Time Book"},'_id', function (err, book) {
+                if(book){
+                    var id = book[0]._id;
+                    chai.request(server)
+                        .delete('/books/'+id)
+                        .end(function(err,res){
+                            expect(res.body).to.have.property('message','Book Successfully Deleted!' ) ;
+                            done();
+                        });
+                }
+            });
         });
-        it('should return a message that deleting false for invalid donation id', function(done){
+        after(function  (done) {
             chai.request(server)
-                .delete('/donations/1100001')
-                .end(function(err,res){
-                    expect(res.body).to.have.property('message','Donation NOT DELETED!' ) ;
+                .get('/books')
+                .end(function(err, res) {
+                    expect(res.body.length).to.equal(2);
+                    Book.collection.deleteMany();
                     done();
                 });
         });
     });
-    afterEach(function(done){
-        Book.collection.deleteMany();
-        done();
-    });
+
 
 
 });

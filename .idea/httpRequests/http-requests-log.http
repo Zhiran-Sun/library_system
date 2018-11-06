@@ -1,3 +1,21 @@
+GET http://localhost:3000/books
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"book_id":"5bd0fef4ccc8b80e56143b5b","user_id":"5bd0ff18ccc8b80e56143b5c"}
+
+###
+
+GET http://localhost:3000/books
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"book_id":"5bd0fef4ccc8b80e56143b5b","user_id":"5bd0ff18ccc8b80e56143b5c"}
+
+###
+
 GET http://localhost:3000/records/count/totalRecords
 Accept: */*
 Cache-Control: no-cache
@@ -523,28 +541,6 @@ Content-Type: application/json
 {"startDate":"2018,10,3", "endDate":"2018,10,3"}
 
 <> 2018-10-26T094624.200.json
-
-###
-
-GET http://localhost:3000/records/borrow/date
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"startDate":"2018,10,3", "endDate":"2018,10,27"}
-
-<> 2018-10-26T094504.200.json
-
-###
-
-GET http://localhost:3000/records/borrow/date
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"startDate":"2018,10,3", "endDate":"2018,10,27"}
-
-<> 2018-10-26T094233.200.json
 
 ###
 
