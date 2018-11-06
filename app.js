@@ -27,16 +27,20 @@ app.use('/users', usersRouter);
 //book routes
 app.get('/books', books.findAll);
 app.get('/books/:id', books.findOne);
+app.get('/books/:name/byName', books.findByName);
+app.get('/books/:press/byPress', books.findByPress);
 app.post('/books', books.addBook);
-app.put('/books/:id/borrow', books.borrowBook);
-app.put('/books/:id/return', books.returnBook);
 app.delete('/books/:id', books.deleteBook);
 app.get('/books/borrow/see', books.findAllBorrowed);
 app.get('/books/borrow/count', books.getBorrowedNumber);
+app.get('/books/inlib/see', books.findAllInLibrary);
+app.get('/books/inlib/count', books.getInLibraryNumber);
 
 //student routes
 app.get('/students', students.findAll);
 app.get('/students/:id', students.findOne);
+app.get('/students/:name/byName', students.findByName);
+app.get('/students/:number/byStuNum', students.findByStuNum);
 app.post('/students', students.addStudent);
 app.delete('/students/:id', students.deleteStudent);
 

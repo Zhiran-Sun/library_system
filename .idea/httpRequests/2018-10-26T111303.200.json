@@ -1,0 +1,26 @@
+[
+  {
+    "status": true,
+    "_id": "5bd0fef4ccc8b80e56143b5b",
+    "book_name": "English book",
+    "author": "Mr.Wang",
+    "publishing": "Foreign Language Press",
+    "__v": 0
+  },
+  {
+    "status": true,
+    "_id": "5bd366155bae631d6d29df75",
+    "book_name": "Grammer book",
+    "author": "Mr.Zhang",
+    "publishing": "PK Press",
+    "__v": 0
+  },
+  {
+    "status": true,
+    "_id": "5bd382d0fb6fc074abb09620",
+    "book_name": "History book",
+    "author": "Mr.Sun",
+    "publishing": "Traditional Press",
+    "__v": 0
+  }
+]

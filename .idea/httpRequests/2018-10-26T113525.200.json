@@ -1,0 +1,11 @@
+{
+  "message": "Record Successfully Added!",
+  "data": {
+    "borrow_date": "2018-10-26T22:27:01.258Z",
+    "return_date": null,
+    "_id": "5bd396ad71694d2029b9ad1d",
+    "book_id": "5bd0fef4ccc8b80e56143b5b",
+    "user_id": "5bd0ff18ccc8b80e56143b5c",
+    "__v": 0
+  }
+}

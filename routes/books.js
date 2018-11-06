@@ -33,6 +33,28 @@ router.findOne=(req,res)=>{
     });
 }
 
+
+//findByName(),findByPress are the functions which support fuzzy search.
+router.findByName=(req,res)=>{
+    res.setHeader('Content-Type', 'application/json');
+    Book.find({"book_name":{$regex:req.params.name}},function(err, book) {
+        if(err)
+            res.json({message:'Book NOT Found!'});
+        else
+            res.send(JSON.stringify(book,null,5));
+    });
+}
+
+router.findByPress=(req,res)=>{
+    res.setHeader('Content-Type', 'application/json');
+    Book.find({"publishing":{$regex:req.params.press}},function(err, book) {
+        if(err)
+            res.json({message:'Book NOT Found!'});
+        else
+            res.send(JSON.stringify(book,null,5));
+    });
+}
+
 router.addBook = (req, res) => {
     res.setHeader('Content-Type','application/json');
     var book = new Book();
@@ -43,49 +65,10 @@ router.addBook = (req, res) => {
         if(err)
             res.json({message:'Book NOT Added!'});
         else
-            res.json({message:'Book Successfully Added!', data: book});
+            res.send(JSON.stringify({message:'Book Successfully Added!', data: book},null,5));
     });
 }
 
-router.borrowBook = (req,res)=>{
-    Book.findById(req.params.id, function(err,book){
-        if(err)
-            res.json({message: 'Book NOT Found!', errmsg : err});
-        else{
-            if(book.status === true){
-                book.status = false;
-                book.save(function (err) {
-                    if(err)
-                        res.json({message: 'Book NOT Borrow!', errmsg : err});
-                    else
-                        res.json({message:'Book Successfully Borrowed!', data: book});
-            });}
-            else
-                res.json({message: 'Book has been borrowed, can not do it again!'});
-        }
-    });
-
-}
-
-router.returnBook = (req,res)=>{
-    Book.findById(req.params.id, function(err,book){
-        if(err)
-            res.json({message: 'Book NOT Found!', errmsg : err});
-        else{
-            if(book.status === false){
-                book.status = true;
-                book.save(function (err) {
-                    if(err)
-                        res.json({message: 'Book NOT Return!', errmsg : err});
-                    else
-                        res.json({message:'Book Successfully returned!', data: book});
-            });}
-            else
-                res.json({message:'Book has been returned, can not do it again!'});
-        }
-    });
-
-}
 
 router.deleteBook = (req, res) => {
     Book.findByIdAndRemove(req.params.id, function (err) {
@@ -105,6 +88,15 @@ function countBorrowed(array) {
     return totalNumber;
 }
 
+function countInLibrary(array) {
+    let totalNumber = 0;
+    array.forEach(function (obj) {
+        if(obj.status)
+            totalNumber++;
+    });
+    return totalNumber;
+}
+
 //getBorrowedNumber() function is to count the number of books which has been borrowed.
 router.getBorrowedNumber = (req,res) => {
     Book.find(function(err,book){
@@ -112,6 +104,17 @@ router.getBorrowedNumber = (req,res) => {
             res.send(err);
         else
             res.json({totalBorrowedNumber:countBorrowed(book)});
+    });
+}
+
+
+//getInLibraryNumber() function is to count the number of books which are in library now.
+router.getInLibraryNumber = (req,res) => {
+    Book.find(function(err,book){
+        if(err)
+            res.send(err);
+        else
+            res.json({totalInLibraryNumber:countInLibrary(book)});
     });
 }
 
@@ -124,4 +127,15 @@ router.findAllBorrowed = (req,res) => {
             res.send(JSON.stringify(book,null,5));
     });
 }
+
+//findAllInLibrary() function is to get all the books which are in library.
+router.findAllInLibrary = (req,res) => {
+    Book.find({'status':true},function (err,book) {
+        if(err)
+            res.send(err);
+        else
+            res.send(JSON.stringify(book,null,5));
+    });
+}
+
 module.exports = router;

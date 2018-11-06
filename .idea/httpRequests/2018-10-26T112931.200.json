@@ -1,0 +1,11 @@
+{
+  "message": "Book Successfully Added!",
+  "data": {
+    "status": true,
+    "_id": "5bd3954a71694d2029b9ad1b",
+    "book_name": "Happy book",
+    "author": "HelloHello",
+    "publishing": "Good Language Press",
+    "__v": 0
+  }
+}

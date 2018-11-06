@@ -1,20 +1,7 @@
-let mongoose = require('mongoose');
 var Record = require('../models/borrow_record');
 var Book = require('../models/books');
 let express = require('express');
 let router = express.Router();
-
-
-var mongodbUri = 'mongodb://admin:123456a@ds139883.mlab.com:39883/librarydb';
-
-mongoose.connect(mongodbUri);
-let db = mongoose.connection;
-db.on('error',function(err){
-    console.log('Unable to Connect to [ ' + db.name + ']',err);
-});
-db.once('open',function(){
-    console.log('Successfully Connected to [ '+db.name+']');
-});
 
 router.findAll = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
@@ -54,7 +41,7 @@ router.borrowBook = (req, res) => {
                             if(err)
                                 res.json({message:'Record NOT Added!'});
                             else
-                                res.json({message:'Record Successfully Added!', data: record});
+                                res.send(JSON.stringify({message:'Record Successfully Added!', data: record},null,5));
                         });
                     }
                 });}
@@ -90,7 +77,7 @@ router.returnBook = (req,res)=>{
                                         if (err)
                                             res.json({message: 'Book NOT Return!', errmsg: err});
                                         else
-                                            res.json({message: 'Book Successfully returned!', data: record});
+                                            res.send(JSON.stringify({message: 'Book Successfully returned!', data: record},null,5));
                                     });
                                 }
                                 else

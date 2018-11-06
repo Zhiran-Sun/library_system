@@ -1,18 +1,6 @@
-let mongoose = require('mongoose');
 var Student = require('../models/students');
 let express = require('express');
 let router = express.Router();
-
-var mongodbUri = 'mongodb://admin:123456a@ds139883.mlab.com:39883/librarydb';
-
-mongoose.connect(mongodbUri);
-let db = mongoose.connection;
-db.on('error',function(err){
-    console.log('Unable to Connect to [ ' + db.name + ']',err);
-});
-db.once('open',function(){
-    console.log('Successfully Connected to [ '+db.name+']');
-});
 
 router.findAll = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
@@ -33,6 +21,27 @@ router.findOne=(req,res)=>{
     });
 }
 
+//findByName()is the function which is support fuzzy search.
+router.findByName=(req,res)=>{
+    res.setHeader('Content-Type', 'application/json');
+    Student.find({"stu_name":{$regex:req.params.name}},function(err, stu) {
+        if(err)
+            res.json({message:'Student NOT Found!'});
+        else
+            res.send(JSON.stringify(stu,null,5));
+    });
+}
+
+router.findByStuNum=(req,res)=>{
+    res.setHeader('Content-Type', 'application/json');
+    Student.find({"stu_number":req.params.number},function(err, stu) {
+        if(err)
+            res.json({message:'Student NOT Found!'});
+        else
+            res.send(JSON.stringify(stu,null,5));
+    });
+}
+
 router.addStudent = (req, res) => {
     res.setHeader('Content-Type','application/json');
     var stu = new Student();
@@ -44,7 +53,7 @@ router.addStudent = (req, res) => {
         if(err)
             res.json({message:'Student NOT Added!'});
         else
-            res.json({message:'Student Successfully Added!', data: stu});
+            res.send(JSON.stringify({message:'Student Successfully Added!', data: stu},null,5));
     });
 }
 
